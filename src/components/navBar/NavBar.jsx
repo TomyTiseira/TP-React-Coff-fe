@@ -1,18 +1,22 @@
 import React from 'react';
 import logo2 from '../../images/logo2.svg';
 import CartWidget from './CartWidget';
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navbar = () => {
   return (
-    <div>
-        <NavLink to='/'>Inicio</NavLink>
-        <NavLink to='/category/1'>Bebidas</NavLink>
-        <NavLink to='/category/2'>Comidas</NavLink>
-        {/* <NavLink to={`/`}>Inicio</NavLink> */}
-    </div>
-
-  )
+    <nav className='flex-container'>
+      <NavLink to ='/'><img src={logo2} alt="Coffe Fe" width="60" height="60"/></NavLink>
+      <div>
+        <NavLink to='/' className='nav-a'>Inicio</NavLink>
+        <NavLink to='/category/1' className='nav-a'>Bebidas</NavLink>
+        <NavLink to='/category/2' className='nav-a'>Comidas</NavLink>
+      </div>
+      <span>
+        <CartWidget/>
+      </span>
+    </nav>
+  );
 }
 
 export default navbar;
